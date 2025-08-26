@@ -33,7 +33,7 @@ Testing: Pytest
 
 Clone the repo:
 
-git clone https://github.com/<your-username>/expense-tracker-api.git
+git clone https://github.com/Rohin97/expense-tracker-api.git
 cd expense-tracker-api
 
 1. Environment
@@ -132,7 +132,7 @@ GET /api/expenses/summary/ → monthly totals by category
 ## Authentication (via cURL)
 
 Register a user
-curl -X POST https://your-service.onrender.com/api/auth/register/ \
+curl -X POST https://expense-tracker-api-b2l4.onrender.com/api/auth/register/ \
   -H "Content-Type: application/json" \
   -d '{
     "username": "bobby",
@@ -140,7 +140,7 @@ curl -X POST https://your-service.onrender.com/api/auth/register/ \
   }'
 
 Obtain JWT tokens
-curl -X POST https://your-service.onrender.com/api/auth/token/ \
+curl -X POST https://expense-tracker-api-b2l4.onrender.com/api/auth/token/ \
   -H "Content-Type: application/json" \
   -d '{
     "username": "bobby",
@@ -157,7 +157,7 @@ Response:
 
 ## Expenses API (cURL Examples)
 Create an expense
-curl -X POST https://your-service.onrender.com/api/expenses/ \
+curl -X POST https://expense-tracker-api-b2l4.onrender.com/api/expenses/ \
   -H "Authorization: Bearer <ACCESS_TOKEN>" \
   -H "Content-Type: application/json" \
   -d '{
@@ -167,11 +167,11 @@ curl -X POST https://your-service.onrender.com/api/expenses/ \
   }'
 
 List expenses
-curl -X GET https://your-service.onrender.com/api/expenses/ \
+curl -X GET https://expense-tracker-api-b2l4.onrender.com/api/expenses/ \
   -H "Authorization: Bearer <ACCESS_TOKEN>"
 
 Update an expense
-curl -X PATCH https://your-service.onrender.com/api/expenses/1/ \
+curl -X PATCH https://expense-tracker-api-b2l4.onrender.com/api/expenses/1/ \
   -H "Authorization: Bearer <ACCESS_TOKEN>" \
   -H "Content-Type: application/json" \
   -d '{
@@ -179,11 +179,11 @@ curl -X PATCH https://your-service.onrender.com/api/expenses/1/ \
   }'
 
 Delete an expense
-curl -X DELETE https://your-service.onrender.com/api/expenses/1/ \
+curl -X DELETE https://expense-tracker-api-b2l4.onrender.com/api/expenses/1/ \
   -H "Authorization: Bearer <ACCESS_TOKEN>"
 
 Get summary
-curl -X GET https://your-service.onrender.com/api/expenses/summary/ \
+curl -X GET https://expense-tracker-api-b2l4.onrender.com/api/expenses/summary/ \
   -H "Authorization: Bearer <ACCESS_TOKEN>"
 
 ## Testing
