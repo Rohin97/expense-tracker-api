@@ -1,0 +1,31 @@
+{% extends 'main.html' %} {% block content %}
+<h2>Expense summary of last 30 days</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Category</th>
+      <th>Count</th>
+      <th>Total</th>
+      <th>Percent</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for entry in stats %}
+    <tr>
+      {% for stat in entry %}
+      <td>
+        {{stat}}
+      </td>
+      {% endfor %}
+    </tr>
+    {% endfor %}
+    <tr>
+      <th>Aggregates</th>
+      <td>{{count}}</td>
+      <td>{{total}}</td>
+      <td>100</td>
+    </tr>
+  </tbody>
+</table>
+
+{% endblock content %}

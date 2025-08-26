@@ -1,0 +1,21 @@
+{% extends 'main.html' %} {% block content %}
+
+<h1>Expenses</h1>
+
+{% if expenses %}
+<ol>
+  {% for expense in expenses %}
+  <li>
+    ${{expense.amount}} for {{expense.category}} on {{expense.date}} <a href={% url 'updateExpense' expense.id%}>Update</a> <a href={% url 'deleteExpense' expense.id%}>Delete</a>
+    <ul>
+      {{expense.description}}
+    </ul>
+  </li>
+  {% endfor %}
+</ol>
+
+{% else %}
+
+<h5>No expenses</h5>
+
+{% endif %} {% endblock content %}
