@@ -109,6 +109,16 @@ Use the token:
 
 Authorization: Bearer <access_token>
 
+Check health or status up"
+
+GET /healthz/
+
+Response:
+
+{
+"ok": true
+}
+
 ## Expenses API Endpoints
 
 GET /api/expenses/ → list all expenses for the logged-in user
