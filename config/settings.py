@@ -62,7 +62,7 @@ ROOT_URLCONF = 'config.urls'
 
 DATABASES = {
     "default": dj_database_url.parse(
-        os.getenv("DATABASE_URL", "postgres://expense_user:expense_pass@localhost:5432/expense_db"),
+        os.getenv("DATABASE_URL", "postgresql://expense_tracker_api_postgre_user:wl3CPtDCfkIDN3CHvKuPWDZJU76ydvM8@dpg-d2mv4aidbo4c73f9bb2g-a.virginia-postgres.render.com/expense_tracker_api_postgre"),
         conn_max_age=600,
         ssl_require=os.getenv("DB_SSL", "0") == "1",
     )
