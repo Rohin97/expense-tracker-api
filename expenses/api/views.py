@@ -66,8 +66,8 @@ def summary(req):
     ]
     count = Expense.objects.filter(user=req.user,date__lt=datetime.datetime.today(), date__gte=datetime.datetime.today()-datetime.timedelta(30)).count()
     for cat in CATEGORY_CHOICES:
-        subtotal = Expense.objects.filter(category=cat).aggregate(subsum=Sum("amount"))["subsum"] or 0
-        subcount = Expense.objects.filter(category=cat).count()
+        subtotal = Expense.objects.filter(user=req.user,category=cat).aggregate(subsum=Sum("amount"))["subsum"] or 0
+        subcount = Expense.objects.filter(user=req.user,category=cat).count()
         subtotal = round(subtotal,2)
         total += subtotal
         stats.append((cat, subcount, subtotal))
